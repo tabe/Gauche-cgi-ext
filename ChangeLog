@@ -1,0 +1,4 @@
+2007-05-11  Takeshi Abe  <tabe@fixedpoint.jp>
+
+	* test.scm ("<cgi-session>"): checked a destroyed session.
+
