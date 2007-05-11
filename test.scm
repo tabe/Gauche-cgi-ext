@@ -33,6 +33,9 @@
 (test* "destroyed?" #f (destroyed? session))
 (print (timestamp-of session))
 (test* "timestamp-of" #t (number? (timestamp-of session)))
+(session-destroy session)
+(test* "session-destroy(slot)" #t (destroyed? session))
+(test* "session-destroy(file)" #f (file-exists? (path-of session)))
 
 ;; epilogue
 (test-end)
