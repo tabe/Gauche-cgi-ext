@@ -1,0 +1,7 @@
+Read INSTALL to install.
+Send bugs and/or patches to tabe@fixedpoint.jp.
+
+This module borrowed an essential idea from John Kilburg's 
+"Code to handle web sessions ala PHP sessions"
+(http://www.physics.unlv.edu/~john/scheme/session.scm).
+Thanks, John!

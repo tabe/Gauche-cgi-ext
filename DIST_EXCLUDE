@@ -1,0 +1,5 @@
+DIST_EXCLUDE
+Gauche-cgi-ext.gpd
+autom4te.cache
+gauche-cgi-ext
+doc/session.scm
