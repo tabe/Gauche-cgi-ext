@@ -33,6 +33,7 @@
 ;;;  $Id$
 
 (define-module www.cgi-misc
+  (use www.cgi)
   (export cgi-let-parameter cgi-and-let*-parameter))
 
 (select-module www.cgi-misc)

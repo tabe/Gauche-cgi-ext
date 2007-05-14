@@ -1,3 +1,7 @@
+2007-05-15  Takeshi Abe  <tabe@fixedpoint.jp>
+
+	* www/cgi-misc.scm: added a line to use www.cgi.
+
 2007-05-11  Takeshi Abe  <tabe@fixedpoint.jp>
 
 	* test.scm ("<cgi-session>"): checked a destroyed session.
