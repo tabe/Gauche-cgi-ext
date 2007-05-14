@@ -1,5 +1,9 @@
 2007-05-15  Takeshi Abe  <tabe@fixedpoint.jp>
 
+	* www/cgi: moved www/cgi-ext.scm to www/cgi/ext.scm, 
+	www/cgi-misc.scm to www/cgi/misc.scm, and 
+	www/cgi-session.scm to www/cgi/session.scm.
+
 	* www/cgi-misc.scm: added a line to use www.cgi.
 
 2007-05-11  Takeshi Abe  <tabe@fixedpoint.jp>

@@ -1,5 +1,5 @@
 ;;;
-;;; cgi-session.scm - php-like session utility
+;;; www.cgi.session - php-like session utility
 ;;;
 ;;;   Copyright (c) 2007 Takeshi Abe. All rights reserved.
 ;;;
@@ -32,7 +32,7 @@
 ;;;
 ;;;  $Id$
 
-(define-module www.cgi-session
+(define-module www.cgi.session
   (use file.util)
   (use gauche.parameter)
   (use rfc.base64)
@@ -60,7 +60,7 @@
 		  session-get-variable session-set-variable
 		  session-let-variable session-and-let*-variable))
 
-(select-module www.cgi-session)
+(select-module www.cgi.session)
 
 (define (id->path id) (format #f "~a/sess_~a" (*session-directory*) id))
 (define (path->id path) (string-scan (sys-basename path) "sess_" 'after))
@@ -238,4 +238,4 @@
 	((_ session ((a b ...) ...) c ...)
 	  (and-let* ((a (session-get-variable session b ...)) ...) c ...))))
 
-(provide "www.cgi-session")
+(provide "www/cgi/session")

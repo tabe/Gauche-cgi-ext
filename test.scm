@@ -4,9 +4,9 @@
 
 (use gauche.test)
 
-(test-start "www.cgi-ext")
-(use www.cgi-ext)
-(test-module 'www.cgi-ext)
+(test-start "www.cgi.ext")
+(use www.cgi.ext)
+(test-module 'www.cgi.ext)
 
 (test-section "parameters")
 (test* "*session-directory*" "/tmp" (*session-directory*))

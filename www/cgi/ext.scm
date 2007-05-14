@@ -1,5 +1,5 @@
 ;;;
-;;; cgi-ext.scm
+;;; www.cgi.ext
 ;;;
 ;;;   Copyright (c) 2007 Takeshi Abe. All rights reserved.
 ;;;
@@ -32,7 +32,7 @@
 ;;;
 ;;;  $Id$
 
-(define-module www.cgi-ext
-  (extend www.cgi-misc www.cgi-session))
+(define-module www.cgi.ext
+  (extend www.cgi.misc www.cgi.session))
 
-(provide "www.cgi-ext")
+(provide "www/cgi/ext")

@@ -1,5 +1,5 @@
 ;;;
-;;; cgi-misc.scm
+;;; www.cgi.misc
 ;;;
 ;;;   Copyright (c) 2007 Takeshi Abe. All rights reserved.
 ;;;
@@ -32,11 +32,11 @@
 ;;;
 ;;;  $Id$
 
-(define-module www.cgi-misc
+(define-module www.cgi.misc
   (use www.cgi)
   (export cgi-let-parameter cgi-and-let*-parameter))
 
-(select-module www.cgi-misc)
+(select-module www.cgi.misc)
 
 (define-syntax cgi-let-parameter
   (syntax-rules ()
@@ -48,4 +48,4 @@
 	((_ params ((a b c ...) ...) d ...)
 	  (and-let* ((a (cgi-get-parameter b params c ...)) ...) d ...))))
 
-(provide "www.cgi-misc")
+(provide "www/cgi/misc")
