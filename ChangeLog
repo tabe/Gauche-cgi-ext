@@ -1,5 +1,8 @@
 2007-07-10  Takeshi Abe  <tabe@fixedpoint.jp>
 
+	* www/cgi/session.scm (construct-cookie-string, session-begin): 
+	let the cookie name optional.
+
 	* example/counter.cgi: added.
 
 	* Makefile.in (SCMFILES): www/cgi-*.scm -> www/cgi/*.scm.
