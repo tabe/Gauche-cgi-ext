@@ -10,7 +10,7 @@
 (define (main args)
   (cgi-main
    (lambda (params)
-     (let ((session (session-begin "gauche")))
+     (let ((session (session-begin)))
        `(,(cgi-header :cookies (construct-cookie-string session))
          ,(html-doctype)
          ,(html:html

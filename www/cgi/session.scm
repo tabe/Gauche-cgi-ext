@@ -132,11 +132,12 @@
 
 (define-method construct-cookie-string ((session <cgi-session>) . specs)
   (let-keywords* specs
-	  ((domain (*session-cookie-domain*))
+	  ((name (*session-cookie-name*))
+       (domain (*session-cookie-domain*))
 	   (path (*session-cookie-path*))
 	   (max-age (*session-cookie-max-age*))
 	   (expires (+ (sys-time) (*session-cookie-max-age*))))
-	(let ((params `(,(*session-cookie-name*)
+	(let ((params `(,name
 					,(id-of session)
 					:domain ,domain
 					:path ,path
@@ -179,8 +180,8 @@
 ; The variable list is initialized to null and the session filename
 ; is determined.
 ;
-(define (session-begin cookie-name)
-  (let ((id (cookie->id cookie-name)))
+(define (session-begin . opt)
+  (let ((id (cookie->id (if (null? opt) (*session-cookie-name*) (car opt)))))
 	(if (and id (file-is-regular? (id->path id)))
 		(make <cgi-session> :id id)
 		(make <cgi-session>))))
