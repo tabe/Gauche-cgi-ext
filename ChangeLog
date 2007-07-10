@@ -1,5 +1,7 @@
 2007-07-10  Takeshi Abe  <tabe@fixedpoint.jp>
 
+	* example/counter.cgi: added.
+
 	* Makefile.in (SCMFILES): www/cgi-*.scm -> www/cgi/*.scm.
 
 2007-05-15  Takeshi Abe  <tabe@fixedpoint.jp>
