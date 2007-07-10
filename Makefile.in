@@ -28,7 +28,7 @@ EXEEXT = @EXEEXT@
 PACKAGE   = Gauche-cgi-ext
 
 ARCHFILES = 
-SCMFILES  = www/cgi-ext.scm www/cgi-misc.scm www/cgi-session.scm
+SCMFILES  = www/cgi/ext.scm www/cgi/misc.scm www/cgi/session.scm
 HEADERS   = 
 
 TARGET    = $(ARCHFILES)
