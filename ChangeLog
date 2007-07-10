@@ -1,3 +1,7 @@
+2007-07-10  Takeshi Abe  <tabe@fixedpoint.jp>
+
+	* Makefile.in (SCMFILES): www/cgi-*.scm -> www/cgi/*.scm.
+
 2007-05-15  Takeshi Abe  <tabe@fixedpoint.jp>
 
 	* www/cgi: moved www/cgi-ext.scm to www/cgi/ext.scm, 
