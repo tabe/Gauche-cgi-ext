@@ -40,12 +40,12 @@
 
 (define-syntax cgi-let-parameter
   (syntax-rules ()
-	((_ params ((a b c ...) ...) d ...)
-	  (let ((a (cgi-get-parameter b params c ...)) ...) d ...))))
+    ((_ params ((a b c ...) ...) d ...)
+     (let ((a (cgi-get-parameter b params c ...)) ...) d ...))))
 
 (define-syntax cgi-and-let*-parameter
   (syntax-rules ()
-	((_ params ((a b c ...) ...) d ...)
-	  (and-let* ((a (cgi-get-parameter b params c ...)) ...) d ...))))
+    ((_ params ((a b c ...) ...) d ...)
+     (and-let* ((a (cgi-get-parameter b params c ...)) ...) d ...))))
 
 (provide "www/cgi/misc")
