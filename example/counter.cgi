@@ -1,8 +1,8 @@
-#!/usr/local/bin/gosh
+#!/usr/bin/env gosh
 
 (use text.html-lite)
 (use www.cgi)
-(use www.cgi.ext)
+(use www.cgi.session.file)
 
 ;; Note that the parameter *session-cookie-domain* is set correctly.
 (*session-cookie-domain* "localhost")
@@ -10,7 +10,7 @@
 (define (main args)
   (cgi-main
    (lambda (params)
-     (let ((session (session-begin)))
+     (let ((session (session-begin <cgi-session-file>)))
        `(,(cgi-header :cookies (construct-cookie-string session))
          ,(html-doctype)
          ,(html:html
@@ -18,10 +18,7 @@
            (html:body
             (html:h1 "Counter")
             (html:p "Your deposit: "
-                    (let ((current (session-get-variable session 'counter)))
-                      (if current
-                          (session-set-variable session 'counter (+ current 1))
-                          (session-set-variable session 'counter 1))
+                    (let ((current (session-get session 'counter)))
+                      (session-set session 'counter (if current (+ current 1) 1))
                       (or current
-                          0)))))))))
-  0)
+                          0))))))))))

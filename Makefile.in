@@ -28,7 +28,7 @@ EXEEXT = @EXEEXT@
 PACKAGE   = Gauche-cgi-ext
 
 ARCHFILES = 
-SCMFILES  = www/cgi/ext.scm www/cgi/misc.scm www/cgi/session.scm
+SCMFILES  = www/cgi/misc.scm www/cgi/session.scm www/cgi/session/file.scm
 HEADERS   = 
 
 TARGET    = $(ARCHFILES)
@@ -67,11 +67,16 @@ uninstall :
 
 clean :
 	$(GAUCHE_PACKAGE) compile --clean cgi_ext $(cgi_ext_SRCS)
+	$(MAKE) -C doc clean
 	rm -rf core $(TARGET) $(GENERATED) *~ $(TEST_GENERATED) so_locations
 
 distclean : clean
+	$(MAKE) -C doc distclean
 	rm -rf $(CONFIG_GENERATED)
 
 maintainer-clean : clean
+	$(MAKE) -C doc maintainer-clean
 	rm -rf $(CONFIG_GENERATED) configure VERSION
 
+doc : all
+	$(MAKE) -C doc

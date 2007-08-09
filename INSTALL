@@ -4,6 +4,9 @@ Basic
 It is necessary to:
 - use gauche 0.8.10 or later
 
+If you would like memcache-based session, it requires memcached and also 
+Gauche-memcache.
+
 
 Command lines
 =============

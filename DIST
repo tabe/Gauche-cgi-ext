@@ -11,7 +11,9 @@ while [ $# -gt 0 ]; do
   case $1 in
     gen) gen=yes; shift ;;
     tgz) tgz=yes; shift ;;
-    *) echo "DIST gen|tgz"; exit 0;;
+    sim) sim=yes; shift ;;
+    pub) pub=yes; shift ;;
+    *) echo "DIST gen|tgz|sim|pub"; exit 0;;
   esac
 done
 
@@ -40,4 +42,29 @@ if [ "$tgz" = "yes" ]; then
   tar cvfX - DIST_EXCLUDE_X . | (cd ../$MODULE-$VERSION; tar xf -)
   (cd ..; tar cvf - $MODULE-$VERSION | gzip -9 > $MODULE-$VERSION.tgz)
   (cd ..; rm -rf $MODULE-$VERSION)
+fi
+
+if [ "$sim" = "yes" ]; then
+  ./DIST tgz
+  if [ "$?" != "0" ]; then exit 1; fi
+  VERSION=`cat VERSION`
+  (cd ..; zcat $MODULE-$VERSION.tgz | tar xf -)
+  (cd ../$MODULE-$VERSION; ./configure)
+  make -C ../$MODULE-$VERSION all check doc example
+fi
+
+if [ "$pub" = "yes" ]; then
+  ./DIST sim
+  if [ "$?" != "0" ]; then exit 1; fi
+  VERSION=`cat VERSION`
+  make -C gauche-cgi-ext clean all
+  if [ "$?" != "0" ]; then exit 2; fi
+  for x in \
+	  ../$MODULE-$VERSION.tgz \
+	  ../$MODULE-$VERSION/doc/reference.ja.html \
+	  ../$MODULE-$VERSION/doc/reference.en.html \
+	  gauche-cgi-ext/index.html \
+	  gauche-cgi-ext/index.en.html; do
+	cp -upf $x /home/htdocs/gauche-cgi-ext/
+  done
 fi
