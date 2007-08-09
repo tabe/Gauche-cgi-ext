@@ -10,7 +10,7 @@
  (memcached "http://www.danga.com/memcached/")
  )
 
-(define *last-update* "Fri Jul 20 2007")
+(define *last-update* "Fri Aug 10 2007")
 (define *gauche-cgi-ext-version* (file->string "../VERSION"))
 (define *gauche-cgi-ext-tarball-basename* (string-append "Gauche-cgi-ext-" *gauche-cgi-ext-version* ".tgz"))
 (define *gauche-cgi-ext-tarball-size* (file-size (string-append "../../" *gauche-cgi-ext-tarball-basename*)))
@@ -34,12 +34,14 @@
 
 	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "News" "最新情報"))
 	 (html:ul
-	  (html:li "[2006-07-20] " (en/ja "Release 0.1.0." "バージョン 0.1.0 を公開しました。")))
+	  (html:li "[2007-08-10] " (en/ja "Release 0.1.0." "バージョン 0.1.0 を公開しました。")))
 
 	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Features" "特徴"))
 	 (html:ul
-	  (html:li (en/ja "an extensible session handling, based on either files or memcache."
-					  "拡張可能なセッションハンドリング(ファイルによるもの、もしくは memcache によるもの)。"))
+	  (html:li (en/ja "an extensible session handling."
+					  "拡張可能なセッションハンドリング"))
+      (html:li (en/ja "an implementation of session based on files."
+                      "ファイルによるセッションの実装。"))
 	  (html:li (en/ja "some of neat macros."
 					  "いくつかの便利なマクロ。"))
 	  )
@@ -62,7 +64,7 @@
 	  (html:li (html:a :href (en/ja "reference.en.html" "reference.ja.html")
 					   "Gauche-cgi-ext " (en/ja "Reference Manual" "リファレンスマニュアル"))))
 
-	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Links" "リンク"))
+	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" "FYI")
 	 (html:ul
 	  (html:li /PHP/)
 	  (html:li /memcached/)

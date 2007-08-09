@@ -5,7 +5,7 @@
 (use text.tree)
 
 (define *version* "0.1.0")
-(define *last-update* "Thu Aug 9 2007")
+(define *last-update* "Fri Aug 10 2007")
 
 (define-syntax def
   (syntax-rules (en ja procedure method)
@@ -49,8 +49,8 @@
   `(def ,lang
 		((class <cgi-session>
                 <cgi-session-meta>)
-		 ("The former abstracts the current session while the latter is the metaclass of it.")
-		 ("前者のインスタンスはセッションを抽象化したオブジェクトで、そのメタクラスが後者です。"))
+		 ("The former abstracts the current session while the latter is its metaclass.")
+		 ("前者はセッションを抽象化したオブジェクトです。後者はそのメタクラスです。"))
 
 		((method (variables-of (session <cgi-session>)))
 		 ("Return an alist consisting of pairs (name . value) of session variables.")
@@ -71,10 +71,6 @@
                     *session-cookie-max-age*)
          ("These are used for the setting of session. *session-max-age* represents the max age of session. *session-cookie-max-age*, *session-cookie-domain*, *session-cookie-path*, or *session-cookie-max-age* corresponds to the name, domain name, path, or max age of cookie of the session, respectively.")
          ("これらのパラメーターはセッションに関する設定に利用できます。*session-max-age* はセッションの保持期間を表します。*session-cookie-name*、*session-domain-name*、*session-cookie-path*、および *session-cookie-max-age* はそれぞれセッション ID を格納するクッキーの名前、ドメイン名、パス、およびクッキーの有効期限です。"))
-
-		((method (construct-cookie-string (session <cgi-session>) &optional specs))
-		 ("THIS METHOD IS PRIVATE FOR IMPLEMENTATION OF SESSION: ")
-		 ("このメソッドはセッションの実装する場合にのみ関係します。"))
 
         ((method (make-id (class <cgi-session-meta>)))
          ("THIS METHOD IS PRIVATE FOR IMPLEMENTATION OF SESSION: ")
@@ -111,15 +107,15 @@
 		((macro session-let
                 session-and-let*)
 		 ("A utility for binding variables according to session variables.")
-		 ("セッション変数を変数に割り当てるための便利な関数です。"))
+		 ("セッション変数を変数に割り当てるための便利なマクロです。"))
 		))
 
 (define-macro (api-misc lang)
   `(def ,lang
 		((macro cgi-let-parameter
                 cgi-and-let*-parameter)
-		 ("")
-		 (""))))
+		 ("A utility for bining variables according to cgi parameters.")
+		 ("CGI パラメータを変数に割り当てるための便利なマクロです。"))))
 
 (define (document-tree lang)
   (let ((title (if (eq? 'ja lang) "Gauche-cgi-ext リファレンスマニュアル" "Gauche-cgi-ext Reference Manual")))
@@ -149,7 +145,7 @@
 	  (if (eq? 'en lang)
 		  (html:p (html:span :style "color:red;" "Warning:") " still unstable.")
 		  (html:p (html:span :style "color:red;" "警告:") " 今後変更の可能性があります。"))
-      (html:h2 "API for session")
+      (html:h2 "API for Session")
 	  (if (eq? 'en lang)
 		  (api-session en)
 		  (api-session ja))
