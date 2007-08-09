@@ -66,6 +66,6 @@ if [ "$pub" = "yes" ]; then
 	  ../$MODULE-$VERSION/doc/reference.en.html \
 	  gauche-cgi-ext/index.html \
 	  gauche-cgi-ext/index.en.html; do
-	cp -upf $x /home/htdocs/gauche-cgi-ext/
+	cp -pf $x /home/htdocs/gauche-cgi-ext/
   done
 fi
