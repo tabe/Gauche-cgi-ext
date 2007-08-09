@@ -1,4 +1,5 @@
 #!/usr/bin/env gosh
+;; -*- encoding: utf-8 -*-
 
 (use file.util)
 (use fixedpoint.site)
@@ -30,39 +31,39 @@
 	 (html:p (html:dfn /Gauche-cgi-ext/)
 			 (en/ja
 				 (list " is an extension package of " /Gauche/ " containing a kind of CGI utilities such as session.")
-				 (list " ¤Ï " /Scheme/ " ½èÍı·Ï " /Gauche/ " ¤Ç CGI ¤ÇÍøÍÑ¤¹¤ë¥»¥Ã¥·¥ç¥ó¤Ê¤É¤Îµ¡Ç½¤òÄó¶¡¤¹¤ë³ÈÄ¥¥Ñ¥Ã¥±¡¼¥¸¤Ç¤¹¡£")))
+				 (list " ã¯ " /Scheme/ " å‡¦ç†ç³» " /Gauche/ " ã§ CGI ã§åˆ©ç”¨ã™ã‚‹ã‚»ãƒƒã‚·ãƒ§ãƒ³ãªã©ã®æ©Ÿèƒ½ã‚’æä¾›ã™ã‚‹æ‹¡å¼µãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã§ã™ã€‚")))
 
-	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "News" "ºÇ¿·¾ğÊó"))
+	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "News" "æœ€æ–°æƒ…å ±"))
 	 (html:ul
-	  (html:li "[2007-08-10] " (en/ja "Release 0.1.0." "¥Ğ¡¼¥¸¥ç¥ó 0.1.0 ¤ò¸ø³«¤·¤Ş¤·¤¿¡£")))
+	  (html:li "[2007-08-10] " (en/ja "Release 0.1.0." "ãƒãƒ¼ã‚¸ãƒ§ãƒ³ 0.1.0 ã‚’å…¬é–‹ã—ã¾ã—ãŸã€‚")))
 
-	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Features" "ÆÃÄ§"))
+	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Features" "ç‰¹å¾´"))
 	 (html:ul
 	  (html:li (en/ja "an extensible session handling."
-					  "³ÈÄ¥²ÄÇ½¤Ê¥»¥Ã¥·¥ç¥ó¥Ï¥ó¥É¥ê¥ó¥°"))
+					  "æ‹¡å¼µå¯èƒ½ãªã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒãƒ³ãƒ‰ãƒªãƒ³ã‚°"))
       (html:li (en/ja "an implementation of session based on files."
-                      "¥Õ¥¡¥¤¥ë¤Ë¤è¤ë¥»¥Ã¥·¥ç¥ó¤Î¼ÂÁõ¡£"))
+                      "ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚ˆã‚‹ã‚»ãƒƒã‚·ãƒ§ãƒ³ã®å®Ÿè£…ã€‚"))
 	  (html:li (en/ja "some of neat macros."
-					  "¤¤¤¯¤Ä¤«¤ÎÊØÍø¤Ê¥Ş¥¯¥í¡£"))
+					  "ã„ãã¤ã‹ã®ä¾¿åˆ©ãªãƒã‚¯ãƒ­ã€‚"))
 	  )
 
-	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Requirements" "Æ³Æş"))
+	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Requirements" "å°å…¥"))
 	 (html:p (en/ja "This package is for Gauche 0.8.10 or later."
-					"¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤Ï Gauche 0.8.10 ¤Ş¤¿¤Ï¤½¤ì°Ê¾å¤ÇÆ°ºî¤·¤Ş¤¹¡£"))
+					"ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã¯ Gauche 0.8.10 ã¾ãŸã¯ãã‚Œä»¥ä¸Šã§å‹•ä½œã—ã¾ã™ã€‚"))
 	 (html:ul
 	  (html:li (en/ja (list "If you would like memcache-based session, "
                             /memcached/ " and also " /Gauche-memcache/ " are necessary.")
-					  (list "¤Ş¤¿ memcache ¤Ë¤è¤ë¥»¥Ã¥·¥ç¥ó¤òÍøÍÑ¤¹¤ë¾ì¹ç¤Ë¤Ï"
-                            /memcached/ " ¤ª¤è¤Ó "/Gauche-memcache/ " ¤¬É¬Í×¤Ç¤¹¡£"))))
+					  (list "ã¾ãŸ memcache ã«ã‚ˆã‚‹ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚’åˆ©ç”¨ã™ã‚‹å ´åˆã«ã¯"
+                            /memcached/ " ãŠã‚ˆã³ "/Gauche-memcache/ " ãŒå¿…è¦ã§ã™ã€‚"))))
 
-	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Download" "¥À¥¦¥ó¥í¡¼¥É"))
+	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Download" "ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰"))
 	 (html:p (html:a :href *gauche-cgi-ext-tarball-url*
 					 *gauche-cgi-ext-tarball-basename* " (" *gauche-cgi-ext-tarball-size*  " bytes)"))
 
-	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Documentation" "Ê¸½ñ"))
+	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Documentation" "æ–‡æ›¸"))
 	 (html:ul
 	  (html:li (html:a :href (en/ja "reference.en.html" "reference.ja.html")
-					   "Gauche-cgi-ext " (en/ja "Reference Manual" "¥ê¥Õ¥¡¥ì¥ó¥¹¥Ş¥Ë¥å¥¢¥ë"))))
+					   "Gauche-cgi-ext " (en/ja "Reference Manual" "ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ãƒãƒ‹ãƒ¥ã‚¢ãƒ«"))))
 
 	 (html:h2 :style "border-bottom: 1px solid #bbbbbb;" "FYI")
 	 (html:ul
