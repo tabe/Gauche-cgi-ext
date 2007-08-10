@@ -3,6 +3,8 @@
 # A helper script for developers.
 #  ./DIST gen  : runs autoconf to generate 'configure' script.
 #  ./DIST tgz  : creates a tarball.
+#  ./DIST sim  : simulates to build.
+#  ./DIST pub  : releases to public.
 # Assumes gnu tar.
 
 MODULE=Gauche-cgi-ext
