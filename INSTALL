@@ -15,3 +15,9 @@ $ ./configure
 $ make
 $ make check
 # make install
+
+
+Platform Specific
+=================
+
+Building with *BSD you will want to use gmake instead of BSD make.
