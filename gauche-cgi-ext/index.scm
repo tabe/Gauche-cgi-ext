@@ -1,5 +1,5 @@
 #!/usr/bin/env gosh
-;; -*- encoding: utf-8 -*-
+;; -*- mode: scheme; coding: utf-8 -*-
 
 (use fixedpoint.package)
 (use fixedpoint.site)
@@ -10,7 +10,7 @@
  (memcached "http://www.danga.com/memcached/")
  )
 
-(define-package Gauche-cgi-ext 2007 8 10)
+(define-package Gauche-cgi-ext 2007 11 1)
 
 (define-index Gauche-cgi-ext
   (html:p (html:dfn /Gauche-cgi-ext/)
@@ -20,6 +20,8 @@
 
   (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "News" "最新情報"))
   (html:ul
+   (html:li "[2007-11-01] " (en/ja "It is confirmed that the current version 0.1.0 runs on Gauche 0.8.12."
+                                  "Gauche 0.8.12 で現在のバージョン 0.1.0 が動作することを確認しました。"))
    (html:li "[2007-08-10] " (en/ja "Release 0.1.0." "バージョン 0.1.0 を公開しました。")))
 
   (html:h2 :style "border-bottom: 1px solid #bbbbbb;" (en/ja "Features" "特徴"))
