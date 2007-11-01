@@ -55,4 +55,4 @@ $GAUCHE_PACKAGE make-gpd "$PACKAGE_NAME" \
 
 dnl Output
 echo -n $PACKAGE_VERSION > VERSION
-AC_OUTPUT(Makefile doc/Makefile gauche-cgi-ext/Makefile)
+AC_OUTPUT(Makefile doc/Makefile)
