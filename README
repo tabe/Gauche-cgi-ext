@@ -5,3 +5,9 @@ This module borrowed an essential idea from John Kilburg's
 "Code to handle web sessions ala PHP sessions"
 (http://www.physics.unlv.edu/~john/scheme/session.scm).
 Thanks, John!
+
+Using scheme-mode in Emacs you may want to add the followings to, say, .emacs:
+(put 'cgi-let-parameter 'scheme-indent-function 2)
+(put 'cgi-and-let*-parameter 'scheme-indent-function 2)
+(put 'session-let 'scheme-indent-function 2)
+(put 'session-and-let* 'scheme-indent-function 2)
