@@ -9,6 +9,7 @@ exec_prefix = @exec_prefix@
 bindir      = @bindir@
 libdir      = @libdir@
 datadir     = @datadir@
+datarootdir = @datarootdir@
 srcdir      = @srcdir@
 VPATH       = $(srcdir)
 
@@ -28,7 +29,7 @@ EXEEXT = @EXEEXT@
 PACKAGE   = Gauche-cgi-ext
 
 ARCHFILES = 
-SCMFILES  = www/cgi/misc.scm www/cgi/session.scm www/cgi/session/file.scm
+SCMFILES  = $(srcdir)/www/cgi/misc.scm $(srcdir)/www/cgi/session.scm $(srcdir)/www/cgi/session/file.scm
 HEADERS   = 
 
 TARGET    = $(ARCHFILES)
@@ -51,7 +52,7 @@ cgi_ext.$(SOEXT): $(cgi_ext_SRCS)
 check : all
 	@rm -rf $(TEST_GENERATED)
 	mkdir test
-	$(GOSH) -I. test.scm > test.log
+	$(GOSH) -I. -I$(srcdir) $(srcdir)/test.scm > test.log
 
 install : all
 	$(INSTALL) -m 444 -T $(GAUCHE_PKGINCDIR) $(HEADERS)
